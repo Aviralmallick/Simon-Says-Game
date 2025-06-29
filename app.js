@@ -11,7 +11,7 @@ let level = 0;
 let h2 = document.querySelector("#inst");
 let high = document.querySelector("#highScore");
 
-document.addEventListener("keypress",function () {
+document.addEventListener("click",function () {
     if(started == false){
         console.log("game is started");
         started = true;
