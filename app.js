@@ -10,15 +10,19 @@ let level = 0;
 
 let h2 = document.querySelector("#inst");
 let high = document.querySelector("#highScore");
+let startBtn = document.querySelector("#startBtn");
 
-document.addEventListener("click",function () {
-    if(started == false){
+function startGame () {
+    if(started === false){
         console.log("game is started");
         started = true;
-
         levelUp();
-    }
-});
+        startBtn.disabled = true;
+        }
+}
+
+
+document.addEventListener("click", startGame, { once: true });
 
 function gameFlash(btn) {
     btn.classList.add("gameFlash");
@@ -68,7 +72,7 @@ function btnPress(){
     let btn = this;
     userFlash(btn);
 
-    userColor = btn.getAttribute("id");
+    let userColor = btn.getAttribute("id");
     userSeq.push(userColor);
 
     checkAns(userSeq.length-1);
@@ -89,5 +93,9 @@ function reset() {
     started = false;
     gameSeq = [];
     userSeq = [];
-    level = 0;
+    level = 0;  
+
+    startBtn.disabled = false; 
 }
+
+startBtn.addEventListener("click",startGame);

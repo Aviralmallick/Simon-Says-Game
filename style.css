@@ -14,6 +14,30 @@ body {
     transition: background-color 0.2s ease;
 }
 
+#startBtn {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#startBtn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+#startBtn:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
 .btn-container {
     display: flex;
     justify-content: center;
